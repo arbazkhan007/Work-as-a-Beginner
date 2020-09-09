@@ -1,0 +1,55 @@
+# a programme to keep you fit while coding
+# for drinking water after every 40 minutes
+# for eye exercize every 20 minutes
+# for body stretching or exercize every one hour
+
+from pygame import mixer
+from datetime import datetime
+from time import time
+
+
+def Healthycoder(file, stopper):
+    mixer.init()
+    mixer.music.load(file)
+    mixer.music.play()
+
+    while True:
+        input1 = input()
+        if input1 == stopper:
+            mixer.music.stop()
+            break
+
+
+# make a seprate .txt file for storing your data
+def logger(msg):
+    with open("MyRecord.txt", "a") as f:
+        f.write(f"{msg} {datetime.now()}\n")
+
+
+Water = time()
+Eye = time()
+Exercize = time()
+WaterInSeconds = 2400
+ExercizeForEyeInSeconds = 1200
+ExercizeInSeconds = 3600
+
+while True:
+    if time() - Water > WaterInSeconds:
+        print("Time to drink water, Enter 'drank' to stop")
+
+        # enter the location of music to play
+        Healthycoder('C:\\Users\\fateo\\Downloads\\water.mp3', 'drank')
+        Water = time()
+        logger("Drank water at")
+
+    if time() - Eye > ExercizeForEyeInSeconds:
+        print("Eye Exercize time, Enter 'done' to stop")
+        Healthycoder('C:\\Users\\fateo\\Downloads\\eye.mp3', 'done')
+        Eye = time()
+        logger("Completed the eye execize at")
+
+    if time() - Exercize > ExercizeInSeconds:
+        print("Body Exercise time, Enter 'done' to stop the music")
+        Healthycoder('C:\\Users\\fateo\\Downloads\\workout.mp3', 'done')
+        Exercize = time()
+        logger("Done Exercize at")
