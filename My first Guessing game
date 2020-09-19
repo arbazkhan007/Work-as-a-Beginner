@@ -1,0 +1,83 @@
+#its a snake, water, gun Game
+
+
+import random
+
+def Game():
+    print("Welcome to the game")
+    name = input("\nEnter your name : ")
+    print("\nIn this game you can choose from snake, water, gun")
+    print("\nYou have 7 chances")
+
+    s = 'snake'
+    w = 'water'
+    g = 'gun'
+    choice1 = s, w, g
+    Human_point = 0
+    Computer_point = 0
+    chances = 1
+
+    while chances <= 7:
+        guess = input("\nEnter s for snake, w for water and g for gun : ")
+        AI_guess = random.choice(choice1)
+
+        if guess == 's' and AI_guess == s:
+            print(f"\n{name} choose {guess} and opponent choose {AI_guess}")
+            print(f"\nMatch tied, None side got point")
+            print(f"\n{name}'s Total point is {Human_point} and opponent's  Total point is {Computer_point}")
+        elif guess == 'w' and AI_guess == g:
+            print(f"\n{name} choose {guess} and opponent choose {AI_guess}")
+            print(f"\nMatch tied, None side got point")
+            print(f"\n{name}'s Total point is {Human_point} and opponent's  Total point is {Computer_point}")
+        elif guess == 'g' and AI_guess == g:
+            print(f"\n{name} choose {guess} and opponent choose {AI_guess}")
+            print(f"\nMatch tied, None side got point")
+            print(f"\n{name}'s Total point is {Human_point} and opponent's  Total point is {Computer_point}")
+        elif guess == 's' and AI_guess == w:
+            print(f"\n{name} choose {guess} and opponent choose {AI_guess}")
+            print(f"\n{name} got 1 point")
+            Human_point += 1
+            print(f"\n{name}'s Total point is {Human_point} and opponent Total point is {Computer_point}")
+        elif guess == 's' and AI_guess == g:
+            print(f"\n{name} choose {guess} and opponent choose {AI_guess}")
+            print(f"\nopponent got 1 point")
+            Computer_point += 1
+            print(f"\n{name}'s Total point is {Human_point} and opponent Total point is {Computer_point}")
+        elif guess == 'w' and AI_guess == s:
+            print(f"\n{name} choose {guess} and opponent choose {AI_guess}")
+            print(f"\nopponent got 1 point")
+            Computer_point += 1
+            print(f"\n{name}'s Total point is {Human_point} and opponent Total point is {Computer_point}")
+        elif guess == 'w' and AI_guess == g:
+            print(f"\n{name} choose {guess} and opponent choose {AI_guess}")
+            print(f"\n{name} got 1 point")
+            Human_point += 1
+            print(f"\n{name}'s Total point is {Human_point} and opponent Total point is {Computer_point}")
+        elif guess == 'g' and AI_guess == s:
+            print(f"\n{name} choose {guess} and opponent choose {AI_guess}")
+            print(f"\n{name} got 1 point")
+            Human_point += 1
+            print(f"\n{name}'s Total point is {Human_point} and opponent Total point is {Computer_point}")
+        elif guess == 'g' and AI_guess == w:
+            print(f"\n{name} choose {guess} and opponent choose {AI_guess}")
+            print(f"\nopponent got 1 point")
+            Computer_point += 1
+            print(f"\n{name}'s Total point is {Human_point} and opponent Total point is {Computer_point}")
+
+        chances += 1
+
+
+    if Human_point > Computer_point:
+        print(f"{name} is the winner")
+    elif Human_point < Computer_point:
+        print(f"You lost the game")
+
+
+Game()
+
+while True:
+    Restart = input("Do you want to play again (y/n)? : ")
+    if Restart == 'y':
+        Game()
+    else:
+        break
