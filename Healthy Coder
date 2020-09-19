@@ -29,7 +29,7 @@ def logger(msg):
 Water = time()
 Eye = time()
 Exercize = time()
-WaterInSeconds = 2400
+WaterInSeconds = 2400             #time in seconds, you can change it as per your needs 
 ExercizeForEyeInSeconds = 1200
 ExercizeInSeconds = 3600
 
