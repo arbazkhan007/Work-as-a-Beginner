@@ -1,0 +1,42 @@
+# a programme to guess when you will turn 100 yrs old and can tell your age in a particular year
+
+while True:
+
+    print("Program to tell when you will turn 100 yrs old")
+    try:
+        input1 = int(input("Enter your age or year of birth : "))
+
+        if input1 > 2015:
+            print("Enter a valid year")
+        elif input1 < 100:
+            age = 2020 - input1
+            age1 = age + 100
+            print(f"you will turn 100 yrs old in year : {age1}")
+        elif input1 < 1900:
+            print("you are too old")
+        elif input1 > 1900:
+            age2 = input1 + 100
+            print(f"you will turn 100 yrs old in year : {age2}")
+
+        input2 = int(input("Enter a year to check your age in that year : "))
+
+        if input2 < input1:
+            print("You are not born yet ")
+        elif input2 > 1900 and input1 < 100:
+            age3 = input2 - 2020
+            age4 = input1 + age3
+            print(f"your age will be {age4} in year {input2}")
+        elif input2 and input1 > 1900:
+            age5 = 2020 - input1
+            age6 = input2 - 2020
+            age7 = age5 + age6
+            print(f"your age will be {age7} in year {input2}")
+
+    except Exception as i:
+        print(f"Enter valid syntax")
+        continue
+    input3 = input("Do you want to exit (y/n)? : ")
+    if input3 not in "y":
+        break
+    else:
+        continue
