@@ -32,7 +32,7 @@ def Game():
         elif guess == 'g' and AI_guess == g:
             print(f"\n{name} choose {guess} and opponent choose {AI_guess}")
             print(f"\nMatch tied, None side got point")
-            print(f"\n{name}'s Total point is {Human_point} and opponent's  Total point is {Computer_point}")
+            print(f"\n{name}'s Total point is {Human_point} and opponent's  Total point is {Computer_point}") 
         elif guess == 's' and AI_guess == w:
             print(f"\n{name} choose {guess} and opponent choose {AI_guess}")
             print(f"\n{name} got 1 point")
