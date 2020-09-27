@@ -18,7 +18,7 @@ while True:
             age2 = input1 + 100
             print(f"you will turn 100 yrs old in year : {age2}")
 
-        input2 = int(input("Enter a year to check your age in that year : "))
+        input2 = int(input("Enter a year to check your age in that year : ")) #any year in which you want to check your age
 
         if input2 < input1:
             print("You are not born yet ")
