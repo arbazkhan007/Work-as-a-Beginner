@@ -1,0 +1,33 @@
+#finding if a number is divisor of n
+# input1 = int(input("Enter n : "))
+# input2 = int(input("Enter mn : "))
+# input3 = int(input("Enter mx : "))
+
+
+while True:
+    try:
+        a = int(input("Enter an number : "))
+        b = int(input("Enter a number : "))
+        c = int(input("Enter number : "))
+
+        if b < c:
+            x = range(b, c)
+            for n in x:
+                if a % n == 0:
+                    print(f"{a} is divided by {n}")
+                elif a % n != 0:
+                    print(f"{a} is not divided by {n}")
+        elif b > c:
+            x = range(c, b)
+            for n in x:
+                if a % n == 0:
+                    print(f"{a} is divided by {n}")
+                elif a % n != 0:
+                    print(f"{a} is not divided by {n}")
+    except Exception as str:
+        continue
+    input3 = input("Do you want to exit (y/n)? : ")
+    if input3 not in "y":
+        break
+    else:
+        continue
